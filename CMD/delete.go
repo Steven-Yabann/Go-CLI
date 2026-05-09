@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"os"
+	// "os"
 
 	"github.com/todo"
 )
@@ -12,7 +12,7 @@ import (
 func DeleteTask(todo *todo.Todos, args []string) {
 	// setup delete command
 	deleteCmd := flag.NewFlagSet("delete", flag.ExitOnError)
-	index := deleteCmd.Int("delete index", -1, "delete task with index")
+	index := deleteCmd.Int("index", -1, "delete task with index")
 
 	// Parse the arguments
 	deleteCmd.Parse(args)
