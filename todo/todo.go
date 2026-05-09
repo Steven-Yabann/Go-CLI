@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"slices"
+	"text/tabwriter"
 	"time"
 )
 
@@ -148,6 +149,20 @@ func (t *Todos) Store(filename string) error {
 	}
 
 	return os.WriteFile(filename, data, 0644)
+}
+
+// function to print todo items
+func (t *Todos) Print() {
+	w := tabwriter.NewWriter(os.Stdout, 0, 0, 3, ' ', 0)
+	fmt.Fprintln(w, "ID\tTITLE\tSTATUS\tTASK")
+	for _, item := range *t {
+		status := "Pending"
+		if item.Done {
+			status = "Done"
+		}
+		fmt.Fprintf(w, "%d\t%s\t%s\t%s\n", item.ID, item.Title, status, item.Task)
+	}
+	w.Flush()
 }
 
 // Implement DRY by making a function to check ID

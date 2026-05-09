@@ -2,8 +2,8 @@ package main
 
 import (
 	"os"
-	"github.com/Steven-Yabann/gtodo/CMD"  // Your updated path
-	"github.com/Steven-Yabann/gtodo/todo" // Your updated path
+	"github.com/Steven-Yabann/gtodo/cmd"  
+	"github.com/Steven-Yabann/gtodo/todo" 
 )
 
 func main() {
@@ -20,9 +20,6 @@ func main() {
 	case "add":
 		cmd.RemindInit(todos)
 		cmd.AddTask(todos, os.Args[2:])
-	case "list":
-		cmd.RemindInit(todos)
-		// Implement your List function here
 	case "update":
 		cmd.RemindInit(todos)
 		cmd.UpdateTask(todos, os.Args[2:])
@@ -32,6 +29,9 @@ func main() {
 	case "complete":
 		cmd.RemindInit(todos)
 		cmd.CompleteTask(todos, os.Args[2:])
+	case "list":
+		cmd.RemindInit(todos)
+		cmd.ListTasks(todos, os.Args[2:])
 	default:
 		cmd.Help()
 	}
