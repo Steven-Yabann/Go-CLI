@@ -2,6 +2,8 @@
 
 A lightweight, efficient Command Line Interface (CLI) todo application built in Go. This tool allows you to manage tasks directly from your terminal, storing them locally in a JSON file in your home directory.
 
+Inspiration is from: `[text](https://github.com/heybran/gtodo)`
+
 ## Features
 
 * **Persistent Storage**: Tasks are saved to `~/todos.json`.
