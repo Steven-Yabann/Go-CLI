@@ -3,6 +3,7 @@ package todo
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"os"
 	"slices"
 	"time"
@@ -139,6 +140,9 @@ func (t *Todos) Load(filename string) error {
 */
 func (t *Todos) Store(filename string) error {
 	data, err := json.Marshal(t)
+
+	fmt.Print(string(data))
+	
 	if err != nil {
 		return err
 	}

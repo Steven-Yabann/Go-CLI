@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/todo"
+	"github.com/Steven-Yabann/gtodo/todo"
 )
 
 

@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/todo"
+	"github.com/Steven-Yabann/gtodo/todo"
 )
 
 func AddTask(todo *todo.Todos, args []string) {
@@ -19,9 +19,9 @@ func AddTask(todo *todo.Todos, args []string) {
 	addCmd.Parse(args)
 
 	// Check if the todo text was provided
-	if flag.NArg() == 0 {
-		fmt.Println("Error: the --task flag is required for the 'add' subcommand.")
-		os.Exit(1)			
+	if *addTask == "" {
+		fmt.Println("Error: the --task flag is required")
+		os.Exit(1)
 	}
 
 	todo.AddTask(*addTitle, *addTask)

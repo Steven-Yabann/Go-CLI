@@ -14,7 +14,7 @@ func Init() {
 		os.Exit(0)		
 	}
 
-	homeDir, err := os.UserHomeDir()
+	homeDir, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -30,6 +30,13 @@ func Init() {
 				log.Fatal(err)
 			}
 			defer file.Close()
+
+			// Write an empty JSON array so Load() doesn't fail later
+			_, err = file.WriteString("[]")
+			if err != nil {
+				file.Close()
+				log.Fatal(err)
+			}
 
 			fmt.Println("Succefully create a \".todos.json\" file in your home directory.")
 		} else {

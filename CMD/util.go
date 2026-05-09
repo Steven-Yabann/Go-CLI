@@ -8,12 +8,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/todo"
+	"github.com/Steven-Yabann/gtodo/todo"
 )
 
 // Get JSON file
 func GetJsonFile() string{
-	homeDir, err := os.UserHomeDir()
+	homeDir, err := os.Getwd()
 
 	if err != nil {
 		log.Fatal(err)

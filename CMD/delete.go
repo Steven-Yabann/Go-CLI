@@ -6,7 +6,7 @@ import (
 	"log"
 	// "os"
 
-	"github.com/todo"
+	"github.com/Steven-Yabann/gtodo/todo"
 )
 
 func DeleteTask(todo *todo.Todos, args []string) {
